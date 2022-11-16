@@ -24,6 +24,7 @@ export const getMenu = async (req, res) => {
     res.json(menu);
   } catch (error) {
     console.log(error);
+    return response(true, 500, "Error occurred while getting menu and dishes list", {});
   }
 };
 
@@ -32,10 +33,10 @@ export const getRestaurant = async (req, res) => {
     const restaurant = await Restaurant.findOne({
       where: { id: 1 },
     });
-    console.log("TEST MEN", restaurant);
     res.json(restaurant);
   } catch (error) {
     console.log(error);
+    return response(true, 500, "Error occurred while getting restaurant list", {});
   }
 };
 
@@ -47,6 +48,7 @@ export const getOnlyMenu = async (req, res) => {
     res.json(menu);
   } catch (error) {
     console.log(error);
+    return response(true, 500, "Error occurred while getting menu list", {});
   }
 };
 
@@ -58,5 +60,6 @@ export const getDishes = async (req, res) => {
     res.json(menu);
   } catch (error) {
     console.log(error);
+    return response(true, 500, "Error occurred while getting dishes list", {});
   }
 };
